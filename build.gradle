@@ -1,0 +1,32 @@
+// apply from 'dependence.gradle'
+
+ext {
+    targetSdkVersion = 30
+    buildToolsVersion = "30.0.3"
+    minSdkVersion = 21
+}
+
+
+buildscript {
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.2"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        // jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
